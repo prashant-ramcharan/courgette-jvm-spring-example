@@ -1,0 +1,28 @@
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.11.0'
+    testCompile 'org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE'
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:4.6.2'
+    testCompile 'io.github.prashant-ramcharan:webdriver-binary-downloader:1.2.2'
+    testCompile 'io.cucumber:cucumber-spring:5.6.0'
+}
+
+tasks.withType(Test) {
+    systemProperties = System.getProperties()
+    systemProperties.remove("java.endorsed.dirs")
+}
+
+task runTest(type: Test) {
+    include '**/runner/CourgetteRunner.class'
+    outputs.upToDateWhen { false }
+}
