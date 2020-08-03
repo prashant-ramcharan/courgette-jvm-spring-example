@@ -9,11 +9,11 @@ import io.cucumber.spring.CucumberContextConfiguration;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import support.TestSupport;
 
 @CucumberContextConfiguration
-@ContextConfiguration("classpath:courgette.xml")
+@SpringBootTest(classes = TestSupport.class)
 public class TestSteps {
 
     @Autowired
@@ -22,10 +22,10 @@ public class TestSteps {
     @After
     public void after(Scenario scenario) {
         if (scenario.isFailed()) {
-            scenario.write("Scenario failed so capturing a screenshot");
+            scenario.log("Scenario failed so capturing a screenshot");
 
             TakesScreenshot screenshot = (TakesScreenshot) testSupport.getDriver();
-            scenario.embed(screenshot.getScreenshotAs(OutputType.BYTES), "image/png");
+            scenario.attach(screenshot.getScreenshotAs(OutputType.BYTES), "image/png", scenario.getName());
         }
         if (testSupport.getDriver() != null) {
             testSupport.getDriver().quit();

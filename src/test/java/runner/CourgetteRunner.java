@@ -22,8 +22,7 @@ import org.junit.runner.RunWith;
                         "pretty",
                         "json:build/cucumber-report/cucumber.json",
                         "html:build/cucumber-report/cucumber.html",
-                        "junit:build/cucumber-report/cucumber.xml"},
-                strict = true
+                        "junit:build/cucumber-report/cucumber.xml"}
         ))
 public class CourgetteRunner {
 }
