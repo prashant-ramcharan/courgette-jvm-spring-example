@@ -13,10 +13,10 @@ dependencies {
     testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.11.0'
 
     testCompile 'org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE'
-    testCompile 'io.cucumber:cucumber-spring:6.8.2'
+    testCompile 'io.cucumber:cucumber-spring:6.9.0'
 
     testCompile 'io.github.prashant-ramcharan:webdriver-binary-downloader:1.2.2'
-    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.6.0'
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.7.0'
 }
 
 tasks.withType(Test) {
