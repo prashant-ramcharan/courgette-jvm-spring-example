@@ -16,7 +16,7 @@ dependencies {
     testCompile 'io.cucumber:cucumber-spring:6.9.1'
 
     testCompile 'io.github.prashant-ramcharan:webdriver-binary-downloader:1.2.2'
-    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.9.1'
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:5.9.2'
 }
 
 tasks.withType(Test) {
