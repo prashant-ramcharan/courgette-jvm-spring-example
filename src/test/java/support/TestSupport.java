@@ -1,7 +1,6 @@
 package support;
 
-import io.github.pramcharan.wd.binary.downloader.WebDriverBinaryDownloader;
-import io.github.pramcharan.wd.binary.downloader.enums.BrowserType;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,7 +11,7 @@ public class TestSupport {
     private WebDriver driver;
 
     public TestSupport() {
-        WebDriverBinaryDownloader.create().downloadLatestBinaryAndConfigure(BrowserType.CHROME);
+        WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.setHeadless(true);
