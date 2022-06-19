@@ -2,6 +2,7 @@ package runner;
 
 import courgette.api.CourgetteOptions;
 import courgette.api.CourgetteRunLevel;
+import courgette.api.CourgetteTestOutput;
 import courgette.api.CucumberOptions;
 import courgette.api.junit.Courgette;
 import org.junit.runner.RunWith;
@@ -11,7 +12,7 @@ import org.junit.runner.RunWith;
         threads = 10,
         runLevel = CourgetteRunLevel.SCENARIO,
         rerunFailedScenarios = true,
-        showTestOutput = true,
+        testOutput = CourgetteTestOutput.CONSOLE,
         reportTargetDir = "build",
         reportTitle = "Courgette-JVM with Cucumber Spring",
         cucumberOptions = @CucumberOptions(

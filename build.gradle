@@ -12,9 +12,9 @@ repositories {
 dependencies {
     testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:3.11.0'
     testCompile 'org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE'
-    testCompile 'io.cucumber:cucumber-spring:7.2.3'
+    testCompile 'io.cucumber:cucumber-spring:7.3.4'
     testCompile 'io.github.bonigarcia:webdrivermanager:5.0.3'
-    testCompile 'io.github.prashant-ramcharan:courgette-jvm:6.4.2'
+    testCompile 'io.github.prashant-ramcharan:courgette-jvm:6.5.1'
 }
 
 tasks.withType(Test) {
